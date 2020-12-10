@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: rgb(121, 188, 255);
+    transition: 1s;
+}
+body.active {
+    background-color: rgb(255, 227, 104);
+    transition: 1s;
+}
+.nav {
+    position: relative;
+    background-color: rgb(72, 15, 228);
+    width: 40%;
+    height: 60px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0px 5px 10px 2px #111;
+    margin-top: 10px;
+    transition: 1s;
+}
+.toggle {
+    background: url(https://waterr.netlify.app/menu.png);
+    display: inline-block;
+    width: 50px;
+    margin-top: 3px;
+    height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.1s;
+    position: relative;
+    right: -50px;
+    cursor: pointer;
+}
+.toggle::before {
+    content: 'Menu';
+    position: relative;
+    right: 70px;
+    display: inline-block;
+    color: #000;
+    text-transform: uppercase;
+    background-color: #fff;
+    font-family: 'Andika New Basic', sans-serif;
+    top: 10px;
+    right: 80px;
+    transition: all 1s;
+}
+.toggle.active {
+    background: url(https://waterr.netlify.app/close.png);
+    display: inline-block;
+    width: 50px;
+    margin-top: 3px;
+    height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.1s;
+}
+.toggle.toggle.active::before {
+    content: 'Close';
+    transition: 1s all;
+}
+section {
+    position: relative;
+    top: 40px;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    height: 500px;
+    /* outline: 0; */
+    /* visibility: hidden; */
+    background: linear-gradient(rgb(13, 223, 135), rgb(41, 95, 223));
+    transition: 1s;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-200px);
+    transition-delay: 0s;
+    box-shadow: inset 0px 0px 20px 0px;
+    /* box-shadow: 0px 0px 20px 0px; */
+    /* backdrop-filter: blur(17px); */
+
+}
+section ul li {
+    position: relative;
+    list-style: none;
+    color: #000;
+    margin: 13px;
+    font-size: 1.9em;
+}
+section ul li a:hover {
+    background-color: #000;
+    color: #fff;
+    text-transform: lowercase;
+    padding: 3px 15px;
+}
+section ul {
+    position: relative;
+    top: 30%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(400px);
+    transition: 1s;
+}
+section ul li a {
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    padding: 3px 10px;
+    line-height: 30px;
+}
+
+section.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: 1s;
+}
+section.active ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px);
+    transform: 1s;
+}
+@media (max-width: 1051px) {
+    section {
+        width: 90%;
+    }
+    .nav {
+        width: 70%;
+    }
+}
